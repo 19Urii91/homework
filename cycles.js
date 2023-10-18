@@ -1,23 +1,35 @@
 "use strict";
 
-let num = 50;
+secondTask()
 
-// while (num <= 55) {
-//   console.log(num);
-//   num++;
+function thirdTask() {
+    for (let i = 2; i <= 10; i++) {
+        if (i % 2 === 0) {
+            console.log(i);
+        }
+    }
+}
+
+thirdTask()
+
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
 // }
 
-// do {
-//   console.log(num);
-//   num++;
-// }
-// while (num < 55);
+function fourthTask() {
+    let i = 2;
 
-for (let i = 1; i < 10; i++) {
-  if (i === 6) {
-    // break;
-    continue;
-  }
-
-  console.log(i);
+    while (i <= 16) {
+        if (i % 2 === 0) {
+            i++;
+            continue;
+        } else {
+            console.log(i);
+        }
+        i++;
+    }
 }
