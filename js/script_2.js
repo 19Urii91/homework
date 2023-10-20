@@ -1,60 +1,81 @@
 "use strict";
 
-// const hamburger = 5;
-// const fries = null;
+// Код возьмите из предыдущего домашнего задания
 
-// if (hamburger && fries) {
-//   console.log("Я сыт!");
-// }
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// const hamburger = 3;
-// const fries = 1;
-// const cola = 1;
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-// console.log(hamburger === 3 && cola && fries);
 
-// console.log(1 && 0);
-// console.log(1 && 5);
-// console.log(null && 5);
-// console.log(0 && "dsvdvdsvds");
+for (let i = 0; i < 2; i++) {
 
-// if (hamburger === 3 && cola === 1 && fries) {
-//   console.log("Все сыты");
-// } else {
-//   console.log("Мы уходим!");
-// }
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
 
-const hamburger = 3;
-const fries = 3;
-const cola = 0;
-const nuggets = 2;
-
-if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
-  console.log("Все довольны");
-} else {
-  console.log("Мы уходим!");
+    if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log("done");
+    } else {
+        console.log("error");
+        i--;
+    }
 }
 
-console.log(hamburger === 3 && (cola === 2 || fries === 3) && nuggets);
 
-let jonhReport, alexReport, samReport, mariaReport = "done";
+// let i = 0;
 
-console.log(jonhReport || alexReport || samReport || mariaReport);
+// while (i < 2) {
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
 
-console.log(!0);
+//   if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+//     console.log("done");
+//   } else {
+//     console.log("error");
+//     i--;
+//   }
 
-console.log( NaN || 2 || undefined );
+//   i++;
+// }
 
-console.log( NaN && 2 && undefined );
 
-console.log( 1 && 2 && 3 );
+// let i = 0;
 
-console.log( !1 && 2 || !3 );
+// do {
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
 
-console.log( 25 || null && !3 );
+//   if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+//     console.log("done");
+//   } else {
+//     console.log("error");
+//     i--;
+//   }
 
-console.log( NaN || null || !3 || undefined || 5);
+//   i++;
+// } while (i < 2);
 
-console.log( NaN || null && !3 && undefined || 5);
 
-console.log( 5 === 5 && 3 > 1 || 5);
+if (personalMovieDB.count < 10) {
+  console.log("Просмотрено довольно мало фильмов");
+    // alert("Просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count >= 10 && personalMovieDB < 30) {
+  console.log("Вы классический зритель");
+    // alert ("Вы классический зритель");
+} else if (personalMovieDB.count >= 30) {
+  console.log("Вы киноман");
+    // alert ("Вы киноман");
+} else {
+  console.log("Произошла ошибка");
+    // alert ("Произошла ошибка");
+}
+
+console.log(personalMovieDB);
