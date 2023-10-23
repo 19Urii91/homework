@@ -77,6 +77,38 @@ greetSubject("Urii");
 function returnNeighboringNumbers (number) {
     return [number - 1, number, number + 1];
 }
+returnNeighboringNumbers(5);
+
+// Third exercise
+function getMathResult (number, amount) {
+    if (typeof(amount) !== "number" || amount <= 0) {
+        return number;
+    }
+
+    let string = "";
+
+    for (let i = 1; i <= amount; i++) {
+        if (i === amount) {
+            string += `${number * i}`;
+        } else {
+            string += `${number * i}---`;
+        }
+    }
+    return string;
+}
+getMathResult(5, 3);
+
+
+/* Задание на урок:
+
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
 
 
 
