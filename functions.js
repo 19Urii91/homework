@@ -97,3 +97,86 @@ function getMathResult (number, amount) {
     return string;
 }
 getMathResult(5, 3);
+
+
+function calculateVolumeAndArea(length) {
+    if (typeof(length) !== "number" || length < 0 || !Number.isInteger(length)) {
+        return "При вычислении произошла ошибка";
+    }
+
+    let volume = 0,
+        area = 0;
+
+    volume = length * length * length;
+    area = 6 * (length * length);
+
+    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`
+}
+
+calculateVolumeAndArea(5);
+
+
+function getCoupeNumber(number) {
+    if (typeof(number) !== "number" || number < 0 || !Number.isInteger(number)) {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+
+    if (number === 0 || number > 36) {
+        return "Таких мест в вагоне не существует";
+    }
+
+    let result;
+    result = Math.ceil((number / 36) * 9);
+    console.log(result);
+}
+
+getCoupeNumber(1);
+
+
+function getTimeFromMinutes(num) {
+    if (typeof(num) !== "number" || !Number.isInteger(num) || num < 0) {
+        return "Ошибка, проверьте данные";
+    }
+
+    let time;
+    let minutes;
+    time = Math.floor(num / 60);
+    minutes = num - (time * 60);
+
+    let hoursStr = "";
+    switch (time) {
+        case 0:
+            hoursStr = "часов";
+            break;
+        case 1:
+            hoursStr = "час";
+            break;
+        case 2:
+        case 3:
+        case 4:
+            hoursStr = "часа";
+            break;
+        default:
+            hoursStr = "часов";
+    }
+
+    return `Это ${time} ${hoursStr} и ${minutes} минут`;
+}
+
+getTimeFromMinutes(150);
+
+function findMaxNumber(a, b, c, d) {
+    if (typeof(a) !== "number" || 
+    typeof(b) !== "number" ||
+    typeof(c) !== "number" ||
+    typeof(d) !== "number") {
+        return 0;
+    } else {
+        return Math.max(a, b, c, d);
+    }
+}
+
+console.log(findMaxNumber(1, 5, 6.6, 11));
+
+
+
