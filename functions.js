@@ -179,4 +179,3 @@ function findMaxNumber(a, b, c, d) {
 console.log(findMaxNumber(1, 5, 6.6, 11));
 
 
-
